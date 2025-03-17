@@ -116,3 +116,22 @@ Promise.resolve()
 console.log('End'); */
 
 // Start End C E A B D 对
+
+/* const p1 = new Promise((resolve, reject) => {
+  console.log('1');
+  resolve();
+  console.log('2');
+})
+
+p1.then(() => {
+  console.log('3');
+  Promise.resolve(() => {
+    console.log('4');
+  }).then((res) => {
+    console.log('5', res);
+  });
+  console.log('6');
+})
+
+console.log('7'); */
+// 1 2 7 3 6 5 不会输出4，因为Promise.resolve的是一个函数，res没有被执行
