@@ -1,0 +1,20 @@
+{
+  "name": "puppeteer",
+  "version": "1.0.0",
+  "description": "a puppeteer study project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "puppteer",
+    "headless"
+  ],
+  "author": "sihuanian",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^23.11.1",
+    "puppeteer-core": "^23.11.1"
+  }
+}
