@@ -135,3 +135,28 @@ p1.then(() => {
 
 console.log('7'); */
 // 1 2 7 3 6 5 不会输出4，因为Promise.resolve的是一个函数，res没有被执行
+async function async1() {
+  console.log('async1 start');
+  await async2();
+  console.log('async1 end');
+}
+async function async2() {
+  console.log('async2');
+}
+
+console.log('illegalscript start');
+
+setTimeout(function () {
+  console.log('setTimeout');
+}, 0);
+async1();
+
+new Promise(function (resolve) {
+  console.log('promise1');
+  resolve();
+}).then(function () {
+  console.log('promise2');
+});
+
+console.log('illegalscript end'); // 4
+//  illegalscript start async1 start async2 promise1 illegalscript end async1 end promise2 setTimeout 错
