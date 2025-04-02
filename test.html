@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+   /*  #app {
+      width: 200px;
+      height: 100px;
+      background-color: #f00;
+    } */
+
+    .outter {
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+      display: grid;
+      place-items: center;
+      /* position: relative; */
+      width: 600px;
+      height: 600px;
+      background-color: #f00;
+    }
+
+    .inner {
+      width: 100px;
+      height: 100px;
+      /* position: absolute; */
+      /* top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+      background-color: #ff0;
+      /* top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto; */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" class="outter">
+    <div class="inner">inner</div>
+  </div>
+  <script src="./linkList.js"></script>
+</body>
+
+</html>

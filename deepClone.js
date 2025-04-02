@@ -59,7 +59,7 @@ function deepClone1(obj, hash = new WeakMap()) {
     case '[object Array]':
     case '[object Object]':
       clone = new obj.constructor();
-      hash.set(obj, clone);
+      hash.set(obj, clone); // 避免循环引用
       Reflect.ownKeys(obj).forEach(key => {
         clone[key] = deepClone1(obj[key], hash);
       });

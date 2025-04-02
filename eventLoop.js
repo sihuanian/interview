@@ -135,7 +135,7 @@ p1.then(() => {
 
 console.log('7'); */
 // 1 2 7 3 6 5 不会输出4，因为Promise.resolve的是一个函数，res没有被执行
-async function async1() {
+/* async function async1() {
   console.log('async1 start');
   await async2();
   console.log('async1 end');
@@ -158,5 +158,33 @@ new Promise(function (resolve) {
   console.log('promise2');
 });
 
-console.log('illegalscript end'); // 4
+console.log('illegalscript end'); */ // 4
 //  illegalscript start async1 start async2 promise1 illegalscript end async1 end promise2 setTimeout 错
+async function async1() {
+  console.log("a");
+  await  async2();
+  console.log("b");
+}
+async function async2() {
+ console.log( 'c');
+}
+console.log("d");
+setTimeout(function () {
+  console.log("e");
+},0);
+async1();
+new Promise(function (resolve) {
+  console.log("f");
+  resolve();
+}).then(function () {
+  console.log("g");
+});
+console.log('h');
+// d
+// a
+// c
+// f
+// h
+// b
+// g
+// e
