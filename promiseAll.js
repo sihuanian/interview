@@ -42,3 +42,23 @@ function debounce(func, wait, immediate = false) {
     return result;
   };
 }
+
+function MPromiseAll(promises) {
+  return new Promise((resolve, reject) => {
+    if (!Array.isArray(promises)) return reject(new TypeError('params is not array'))
+    const result = []
+    let count = 0
+
+    promises.forEach((promise, index) => {
+      Promise.resolve(promise)
+        .then((res) => {
+          result[index] = res
+          count++
+          if (result.length === count) resolve(result)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  })
+}

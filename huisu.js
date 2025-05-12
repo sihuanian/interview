@@ -6,7 +6,7 @@ function permute(nums) {
         if (path.length === nums.length) {
             res.push([...path]); // 记录解
             return;
-        }54
+        }
         for (let i = 0; i < nums.length; i++) {
             if (used[i]) continue; // 剪枝：跳过已选元素
             used[i] = true;        // 选择

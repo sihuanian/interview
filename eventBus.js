@@ -24,6 +24,15 @@ class EventBus {
     const { [event]: targetEvent, ...rest } = this.events
     this.events = rest
   }
+
+  // 只订阅一次
+  once(eventName, callback) {
+    const onceCallback = (...args) => {
+      callback(...args);
+      this.unSubscribe(eventName, onceCallback);
+    };
+    this.subscribe(eventName, onceCallback);
+  }
 }
 
 const eventBus = new EventBus()
@@ -36,9 +45,16 @@ eventBus.subscribe('change', () => {
 })
 
 eventBus.publish('click')
+eventBus.publish('click')
 console.log('event: ', eventBus)
 eventBus.unSubscribe('click')
 console.log('event: ', eventBus)
+
+eventBus.once('input', () => {
+  console.log('订阅了input')
+})
+
+eventBus.publish('input')
 
 const p = { name: 'leoochen', age: 18 }
 const { name, ...rest } = p

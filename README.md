@@ -6,7 +6,7 @@
 
 实现思路
 - 前端切片
-- 上传切片，nanme: hash index: 上传的顺序
+- 上传切片，name: hash index: 上传的顺序
 - 后端组合切片
 
 困难点
@@ -76,7 +76,7 @@
 2. 开源协议
 3. 安全性 npm audit
 4. 活跃度 下载量
-5. 类型支持 esmodule ts
+5. 类型支持 es module ts
 6. 兼容性
 
 ## 项目部署
