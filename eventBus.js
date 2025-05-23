@@ -28,10 +28,10 @@ class EventBus {
   // 只订阅一次
   once(eventName, callback) {
     const onceCallback = (...args) => {
-      callback(...args);
-      this.unSubscribe(eventName, onceCallback);
-    };
-    this.subscribe(eventName, onceCallback);
+      callback(...args)
+      this.unSubscribe(eventName, onceCallback)
+    }
+    this.subscribe(eventName, onceCallback)
   }
 }
 

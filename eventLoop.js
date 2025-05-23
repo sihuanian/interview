@@ -160,7 +160,7 @@ new Promise(function (resolve) {
 
 console.log('illegalscript end'); */ // 4
 //  illegalscript start async1 start async2 promise1 illegalscript end async1 end promise2 setTimeout 错
-async function async1() {
+/* async function async1() {
   console.log("a");
   await  async2();
   console.log("b");
@@ -179,7 +179,7 @@ new Promise(function (resolve) {
 }).then(function () {
   console.log("g");
 });
-console.log('h');
+console.log('h'); */
 // d
 // a
 // c
